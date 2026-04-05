@@ -1,0 +1,246 @@
+:root {
+  --primary: #2E7D32; /* Professional Forest Green */
+  --primary-dark: #1B5E20;
+  --secondary: #212121;
+  --bg-light: #FFFFFF;
+  --bg-sidebar: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --text-main: #212121;
+  --text-muted: #757575;
+  --verified-badge: #2E7D32;
+  --border-color: #EEEEEE;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #1A1A1A;
+}
+
+.bg-glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.custom-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.btn-swanim {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+}
+
+.btn-swanim:hover {
+  background-color: var(--primary-dark);
+  box-shadow: 0 4px 8px rgba(46, 125, 50, 0.2);
+  color: white;
+}
+
+.verified-badge {
+  background-color: #E8F5E9;
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+/* Mobile Bottom Nav - Light Mode */
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 65px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  border-top: 1px solid var(--border-color);
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #9E9E9E;
+  font-size: 0.65rem;
+  transition: color 0.3s ease;
+  gap: 2px;
+}
+
+.nav-item.active {
+  color: var(--primary);
+}
+
+.nav-item svg {
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Hero Light Section */
+.hero-section {
+  background-color: #F8F9FA;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-search {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border-radius: 50px;
+  background: white;
+}
+
+/* Custom Tabs for Dashboard */
+.custom-tabs .nav-link {
+  color: var(--text-muted);
+  border: none !important;
+  font-weight: 600;
+}
+
+.custom-tabs .nav-link.active {
+  color: var(--primary) !important;
+  background-color: transparent !important;
+  border-bottom: 3px solid var(--primary) !important;
+}
+
+/* Horizontal Scroll Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.horizontal-scroll-item {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .horizontal-scroll-item {
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .horizontal-scroll-item {
+    flex: 0 0 calc(25% - 1rem);
+  }
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+/* Cinematic Hero & Overlays */
+.glass-search {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.text-gradient-white {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800 !important;
+}
+
+.bg-hero-overlay {
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-glass {
+  background: rgba(46, 125, 50, 0.9);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
